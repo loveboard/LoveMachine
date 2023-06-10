@@ -1,0 +1,23 @@
+{
+    "credentials": {
+        "tenantName": "loveboard",
+        "clientID": "3319e211-1d47-43ac-9c37-76ef6d63a618",
+        "issuer": "https://loveboard.b2clogin.com/c04e318c-9a3f-4d7d-b5c6-efbb5c68cb77/v2.0/"
+    },
+    "policies": {
+        "policyName": "b2c_1_susi"
+    },
+    "resource": {
+        "scope": ["tasks.read","tasks.write"]
+    },
+    "metadata": {
+        "discovery": ".well-known/openid-configuration",
+        "version": "v2.0"
+    },
+    "settings": {
+        "isB2C": true,
+        "validateIssuer": false,
+        "passReqToCallback": false,
+        "loggingLevel": "info"
+    }
+}

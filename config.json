@@ -19,5 +19,9 @@
         "validateIssuer": false,
         "passReqToCallback": false,
         "loggingLevel": "info"
+    },
+    "s3": {
+        "bucket": "loveboard",
+        "endpoint": "https://s3.tebi.io"
     }
 }

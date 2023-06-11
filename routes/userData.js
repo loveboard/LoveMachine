@@ -30,6 +30,89 @@ router.post("/saveJson", async (req, res) => {
 });
 
 
+
+
+
+
+
+
+/* 
+
+if the user doest have a folder inside the bucket create a new one inside the folder users of the root folder with the name of an random and unique uuid
+
+
+
+
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
+const { v4: uuidv4 } = require('uuid');
+
+const s3Client = new S3Client({ region: 'your-region' });
+
+const bucketName = 'your-bucket-name';
+const folderName = 'users';
+const uuid = uuidv4();
+const folderKey = `${folderName}/${uuid}/`;
+
+const params = {
+  Bucket: bucketName,
+  Key: folderKey,
+  Body: ''
+};
+
+const command = new PutObjectCommand(params);
+
+try {
+  const response = await s3Client.send(command);
+  console.log(`Folder created successfully: ${folderKey}`);
+} catch (err) {
+  console.log(err);
+}
+
+
+How can I check if a folder exists in an S3 bucket using the @aws-sdk/client-s3 module in JavaScript?
+
+const { S3Client, HeadObjectCommand } = require('@aws-sdk/client-s3');
+
+const s3Client = new S3Client({ region: 'your-region' });
+
+const bucketName = 'your-bucket-name';
+const folderKey = 'your-folder-key/';
+
+const params = {
+  Bucket: bucketName,
+  Key: folderKey
+};
+
+const command = new HeadObjectCommand(params);
+
+try {
+  const response = await s3Client.send(command);
+  console.log(`Folder exists: ${folderKey}`);
+} catch (err) {
+  if (err.code === 'NotFound') {
+    console.log(`Folder does not exist: ${folderKey}`);
+  } else {
+    console.log(err);
+  }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // get json from mongodb database
 router.get("/getJson", (req, res) => {
   res.send({ message: "json saved successfully" });
